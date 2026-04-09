@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Program Images | Penn Recreation</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background-color: #f8f8f8;
+      margin: 0;
+      padding: 24px;
+      color: #222;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 48px;
+    }
+
+    h2 {
+      margin-top: 56px;
+      padding-bottom: 6px;
+      border-bottom: 2px solid #ccc;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 18px;
+      margin-top: 20px;
+    }
+
+    .gallery a {
+      display: block;
+      position: relative;
+      overflow: hidden;
+      border-radius: 6px;
+    }
+
+    .gallery img {
+      width: 100%;
+      height: auto;
+      display: block;
+      background-color: #ddd;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .gallery a:hover img {
+      transform: scale(1.06);
+      box-shadow: 0 12px 25px rgba(0, 0, 0, 0.25);
+    }
+
+    footer {
+      margin-top: 80px;
+      text-align: center;
+      font-size: 0.9rem;
+      color: #666;
+    }
+  </style>
+</head>
+
+<body>
+
+<h1>Program Images</h1>
+
+<!-- ========================= -->
+<!-- Pride Day -->
+<!-- ========================= -->
+<h2>Pride Day (April 7)</h2>
+<div class="gallery">
+
+  <a href="https://www.flickr.com/photo.gne?id=55195784974" target="_blank" rel="noopener">
+    <img src="https://live.staticflickr.com/65535/55195784974_cac063796c_w.jpg"
+         alt="Pride Day event at Penn Recreation">
+  </a>
+
+  <a href="https://www.flickr.com/photo.gne?id=55195683198" target="_blank" rel="noopener">
+    <img src="https://live.staticflickr.com/65535/55195683198_abc0707c04_w.jpg"
+         alt="Pride Day celebration">
+  </a>
+
+</div>
+
+<!-- ========================= -->
+<!-- Night at the Rec -->
+<!-- ========================= -->
+<h2>Night at the Rec (2025)</h2>
+<div class="gallery">
+
+  <a href="https://www.flickr.com/photo.gne?id=55176537071" target="_blank" rel="noopener">
+    <img src="https://live.staticflickr.com/65535/55176537071_5693ec8f0e.jpg"
+         alt="Night at the Rec event">
+  </a>
+
+  <a href="https://www.flickr.com/photo.gne?id=55175647627" target="_blank" rel="noopener">
+    <img src="https://live.staticflickr.com/65535/55175647627_a7f3f33d84.jpg"
+         alt="Night at the Rec activity">
+  </a>
+
+</div>
+
+<footer>
+  Images are hosted on Flickr’s public CDN. Hover to preview, click to view on Flickr.
+</footer>
+
+</body>
