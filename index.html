@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,52 +8,55 @@
   <style>
     body {
       font-family: Arial, Helvetica, sans-serif;
-      background-color: #f8f8f8;
+      background-color: #f6f6f6;
       margin: 0;
-      padding: 24px;
+      padding: 32px;
       color: #222;
     }
 
     h1 {
       text-align: center;
-      margin-bottom: 48px;
+      margin-bottom: 56px;
     }
 
     h2 {
-      margin-top: 56px;
-      padding-bottom: 6px;
-      border-bottom: 2px solid #ccc;
+      margin-top: 64px;
+      margin-bottom: 16px;
+      padding-bottom: 8px;
+      border-bottom: 3px solid #ddd;
     }
 
+    /* Estrada-style grid */
     .gallery {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-      gap: 18px;
-      margin-top: 20px;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 20px;
     }
 
-    .gallery a {
-      display: block;
-      border-radius: 6px;
-      overflow: hidden;
-    }
-
-    .gallery img {
+    /* Image card */
+    .card {
+      position: relative;
       width: 100%;
-      height: auto;
-      display: block;
-      background-color: #ddd;
-      transition: transform 0.25s ease, box-shadow 0.25s ease;
+      height: 170px;              /* FIXED card height */
+      overflow: hidden;
+      border-radius: 10px;
+      background: #ccc;
     }
 
-    .gallery a:hover img,
-    .gallery a:focus img {
-      transform: scale(1.06);
-      box-shadow: 0 12px 25px rgba(0, 0, 0, 0.25);
+    .card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;          /* KEY Estrada behavior */
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .card:hover img {
+      transform: scale(1.08);
+      box-shadow: 0 16px 32px rgba(0,0,0,0.25);
     }
 
     footer {
-      margin-top: 80px;
+      margin-top: 96px;
       text-align: center;
       font-size: 0.9rem;
       color: #666;
@@ -66,61 +68,38 @@
 
 <h1>Program Images</h1>
 
-<!-- ================================================= -->
-<!-- Pride Day (April 7) -->
-<!-- ================================================= -->
+<!-- ================== Pride Day ================== -->
 <h2>Pride Day (April 7)</h2>
 <div class="gallery">
-  <a href="https://www.flickr.com/photo.gne?id=55195784974"><img src="https://live.staticflickr.com/65535/55195784974_cac063796c_w.jpg" alt="Pride Day image"></a>
-  <a href="https://www.flickr.com/photo.gne?id=55195683198"><img src="https://live.staticflickr.com/65535/55195683198_abc0707c04_w.jpg" alt="Pride Day image"></a>
-  <a href="https://www.flickr.com/photo.gne?id=55195683343"><img src="https://live.staticflickr.com/65535/55195683343_18a1e6a8ce_w.jpg" alt="Pride Day image"></a>
-  <a href="https://www.flickr.com/photo.gne?id=55195785094"><img src="https://live.staticflickr.com/65535/55195785094_d6ec0e6059_w.jpg" alt="Pride Day image"></a>
-  <a href="https://www.flickr.com/photo.gne?id=55195527046"><img src="https://live.staticflickr.com/65535/55195527046_6d8d928852_w.jpg" alt="Pride Day image"></a>
-  <a href="https://www.flickr.com/photo.gne?id=55195938545"><img src="https://live.staticflickr.com/65535/55195938545_94ffe759e3_w.jpg" alt="Pride Day image"></a>
-  <a href="https://www.flickr.com/photo.gne?id=55194641417"><img src="https://live.staticflickr.com/65535/55194641417_0a07ff7895_w.jpg" alt="Pride Day image"></a>
-  <a href="https://www.flickr.com/photo.gne?id=55195939295"><img src="https://live.staticflickr.com/65535/55195939295_eacf43e1a3_w.jpg" alt="Pride Day image"></a>
+  <a class="card" href="https://www.flickr.com/">
+    <img src="https://live.staticflickr.com/65535/55195784974_cac063796c_w.jpg" alt="">
+  </a>
+  <a class="card" href="https://www.flickr.com/">
+    <img src="https://live.staticflickr.com/65535/55195683198_abc0707c04_w.jpg" alt="">
+  </a>
+  <a class="card" href="https://www.flickr.com/">
+    <img src="https://live.staticflickr.com/65535/55195683343_18a1e6a8ce_w.jpg" alt="">
+  </a>
+  <a class="card" href="https://www.flickr.com/">
+    <img src="https://live.staticflickr.com/65535/55195785094_d6ec0e6059_w.jpg" alt="">
+  </a>
 </div>
 
-<!-- ================================================= -->
-<!-- Night at the Rec (2025) -->
-<!-- ================================================= -->
+<!-- ================== Night at the Rec ================== -->
 <h2>Night at the Rec (2025)</h2>
 <div class="gallery">
-  <a href="https://www.flickr.com/photo.gne?id=55176537071"><img src="https://live.staticflickr.com/65535/55176537071_5693ec8f0e.jpg" alt="Night at the Rec image"></a>
-  <a href="https://www.flickr.com/photo.gne?id=55175647627"><img src="https://live.staticflickr.com/65535/55175647627_a7f3f33d84.jpg" alt="Night at the Rec image"></a>
-  <a href="https://www.flickr.com/photo.gne?id=55176792699"><img src="https://live.staticflickr.com/65535/55176792699_513926d9b4.jpg" alt="Night at the Rec image"></a>
-  <a href="https://www.flickr.com/photo.gne?id=55176817719"><img src="https://live.staticflickr.com/65535/55176817719_23d605e7b9.jpg" alt="Night at the Rec image"></a>
-</div>
-
-<!-- ================================================= -->
-<!-- Fitness & Wellbeing -->
-<!-- ================================================= -->
-<h2>Fitness &amp; Wellbeing</h2>
-<div class="gallery">
-  <a href="https://www.flickr.com/photo.gne?id=55170349908"><img src="https://live.staticflickr.com/65535/55170349908_76655a72e1.jpg" alt="Fitness and wellbeing image"></a>
-  <a href="https://www.flickr.com/photo.gne?id=55170353278"><img src="https://live.staticflickr.com/65535/55170353278_772bbc58b4.jpg" alt="Fitness and wellbeing image"></a>
-  <a href="https://www.flickr.com/photo.gne?id=55170187561"><img src="https://live.staticflickr.com/65535/55170187561_ec2c926a5f.jpg" alt="Fitness and wellbeing image"></a>
-  <a href="https://www.flickr.com/photo.gne?id=55170436529"><img src="https://live.staticflickr.com/65535/55170436529_18fbe244c9.jpg" alt="Fitness and wellbeing image"></a>
-</div>
-
-<!-- ================================================= -->
-<!-- Intramurals -->
-<!-- ================================================= -->
-<h2>Intramurals</h2>
-<div class="gallery">
-  <a href="https://www.flickr.com/photo.gne?id=55185599733"><img src="https://live.staticflickr.com/65535/55185599733_97ff080aa9_w.jpg" alt="Intramurals image"></a>
-  <a href="https://www.flickr.com/photo.gne?id=55185700264"><img src="https://live.staticflickr.com/65535/55185700264_722efe0bde_w.jpg" alt="Intramurals image"></a>
-  <a href="https://www.flickr.com/photo.gne?id=55184553957"><img src="https://live.staticflickr.com/65535/55184553957_66e8d18d20.jpg" alt="Intramurals image"></a>
-</div>
-
-<!-- ================================================= -->
-<!-- Outdoor Adventure & Climbing -->
-<!-- ================================================= -->
-<h2>Outdoor Adventure &amp; Climbing</h2>
-<div class="gallery">
-  <a href="https://www.flickr.com/photo.gne?id=55170554810"><img src="https://live.staticflickr.com/65535/55170554810_63ab291bec.jpg" alt="Outdoor adventure image"></a>
-  <a href="https://www.flickr.com/photo.gne?id=55170328098"><img src="https://live.staticflickr.com/65535/55170328098_c202f9b500.jpg" alt="Outdoor adventure image"></a>
-  <a href="https://www.flickr.com/photo.gne?id=55169264047"><img src="https://live.staticflickr.com/65535/55169264047_f4045239f6.jpg" alt="Outdoor adventure image"></a>
+  <a class="card" href="https://www.flickr.com/">
+    <img src="https://live.staticflickr.com/65535/55176537071_5693ec8f0e.jpg" alt="">
+  </a>
+  <a class="card" href="https://www.flickr.com/">
+    <img src="https://live.staticflickr.com/65535/55175647627_a7f3f33d84.jpg" alt="">
+  </a>
+  <a class="card" href="https://www.flickr.com/">
+    <img src="https://live.staticflickr.com/65535/55176792699_513926d9b4.jpg" alt="">
+  </a>
+  <a class="card" href="https://www.flickr.com/">
+    <img src="https://live.staticflickr.com/65535/55176817719_23d605e7b9.jpg" alt="">
+  </a>
 </div>
 
 <footer>
