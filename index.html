@@ -2,36 +2,33 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Program Images</title>
+  <title>Carousel Test</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <style>
     body {
       font-family: Arial, Helvetica, sans-serif;
-      margin: 0;
-      padding: 32px;
+      padding: 40px;
       background: #f6f6f6;
-      color: #222;
     }
 
     h1 {
       text-align: center;
-      margin-bottom: 48px;
+      margin-bottom: 40px;
     }
 
-    .section-title {
-      color: #011F5B; /* Penn Navy */
-      font-weight: 700;
-      margin-top: 64px;
-      margin-bottom: 16px;
+    h2 {
+      color: #011F5B;
       border-bottom: 3px solid #ddd;
       padding-bottom: 8px;
+      margin-top: 40px;
     }
 
     .carousel {
       display: flex;
       align-items: center;
       gap: 12px;
+      margin-top: 16px;
     }
 
     .carousel-track {
@@ -45,119 +42,54 @@
       width: 220px;
       height: 160px;
       object-fit: cover;
-      border-radius: 10px;
+      border-radius: 8px;
       background: #ccc;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .carousel-track img:hover {
-      transform: scale(1.06);
-      box-shadow: 0 12px 25px rgba(0,0,0,0.25);
     }
 
     .nav {
+      font-size: 2rem;
       background: none;
       border: none;
-      font-size: 2rem;
       cursor: pointer;
       color: #011F5B;
-      padding: 0 12px;
-      user-select: none;
-    }
-
-    footer {
-      margin-top: 96px;
-      text-align: center;
-      font-size: 0.85rem;
-      color: #666;
     }
   </style>
 </head>
 
 <body>
 
-<h1>Program Images</h1>
+<h1>Carousel Test</h1>
 
-<h2 class="section-title">Pride Day (April 7)</h2>
-<div class="carousel" data-gallery="pride-day">
+<h2>Pride Day (TEST)</h2>
+<div class="carousel" data-gallery="test">
   <button class="nav prev">‹</button>
   <div class="carousel-track"></div>
   <button class="nav next">›</button>
 </div>
-
-<h2 class="section-title">Night at the Rec (2025)</h2>
-<div class="carousel" data-gallery="night-rec">
-  <button class="nav prev">‹</button>
-  <div class="carousel-track"></div>
-  <button class="nav next">›</button>
-</div>
-
-<h2 class="section-title">Fitness &amp; Wellbeing</h2>
-<div class="carousel" data-gallery="fitness">
-  <button class="nav prev">‹</button>
-  <div class="carousel-track"></div>
-  <button class="nav next">›</button>
-</div>
-
-<h2 class="section-title">Intramurals</h2>
-<div class="carousel" data-gallery="intramurals">
-  <button class="nav prev">‹</button>
-  <div class="carousel-track"></div>
-  <button class="nav next">›</button>
-</div>
-
-<h2 class="section-title">Outdoor Adventure &amp; Climbing</h2>
-<div class="carousel" data-gallery="outdoor">
-  <button class="nav prev">‹</button>
-  <div class="carousel-track"></div>
-  <button class="nav next">›</button>
-</div>
-
-<footer>
-  Images are hosted on Flickr’s public CDN.
-</footer>
 
 <script>
-  /*
-    ✅ THIS IS THE ONLY SECTION THAT CHANGES MONTHLY
-    ✅ Copy links from Program Images Pages.docx
-    ✅ Paste them into the arrays below
-  */
   const galleries = {
-    "pride-day": [
-  "https://live.staticflickr.com/65535/55195784974_cac063796c_w.jpg",
-  "https://live.staticflickr.com/65535/55195683198_abc0707c04_w.jpg",
-  "https://live.staticflickr.com/65535/55195683343_18a1e6a8ce_w.jpg",
-  "https://live.staticflickr.com/65535/55195785094_d6ec0e6059_w.jpg",
-    ],
-    "night-rec": [
-      // paste Night at the Rec links here
-    ],
-    "fitness": [
-      // paste Fitness & Wellbeing links here
-    ],
-    "intramurals": [
-      // paste Intramurals links here
-    ],
-    "outdoor": [
-      // paste Outdoor Adventure links here
+    "test": [
+      "https://live.staticflickr.com/65535/55195784974_cac063796c_w.jpg",
+      "https://live.staticflickr.com/65535/55195683198_abc0707c04_w.jpg",
+      "https://live.staticflickr.com/65535/55195683343_18a1e6a8ce_w.jpg",
+      "https://live.staticflickr.com/65535/55195785094_d6ec0e6059_w.jpg"
     ]
   };
 
   document.querySelectorAll(".carousel").forEach(carousel => {
     const key = carousel.dataset.gallery;
-    const images = galleries[key] || [];
+    const images = galleries[key];
     const track = carousel.querySelector(".carousel-track");
 
     let index = 0;
-    const visible = 4;
+    const visible = 3;
 
     function render() {
       track.innerHTML = "";
       images.slice(index, index + visible).forEach(src => {
         const img = document.createElement("img");
         img.src = src;
-        img.loading = "lazy";
         track.appendChild(img);
       });
     }
@@ -178,4 +110,5 @@
 
 </body>
 </html>
+``
 
