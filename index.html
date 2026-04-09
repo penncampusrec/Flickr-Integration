@@ -1,65 +1,74 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Program Images | Campus Recreation</title>
+  <title>Program Images</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <style>
     body {
       font-family: Arial, Helvetica, sans-serif;
-      background-color: #f6f6f6;
       margin: 0;
       padding: 32px;
+      background: #f6f6f6;
       color: #222;
     }
 
     h1 {
       text-align: center;
-      margin-bottom: 56px;
+      margin-bottom: 48px;
     }
 
-    h2 {
+    .section-title {
+      color: #011F5B; /* Penn Navy */
+      font-weight: 700;
       margin-top: 64px;
       margin-bottom: 16px;
-      padding-bottom: 8px;
       border-bottom: 3px solid #ddd;
+      padding-bottom: 8px;
     }
 
-    /* Estrada-style grid */
-    .gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-      gap: 20px;
+    .carousel {
+      display: flex;
+      align-items: center;
+      gap: 12px;
     }
 
-    /* Image card */
-    .card {
-      position: relative;
-      width: 100%;
-      height: 170px;              /* FIXED card height */
+    .carousel-track {
+      display: flex;
+      gap: 16px;
       overflow: hidden;
+      width: 100%;
+    }
+
+    .carousel-track img {
+      width: 220px;
+      height: 160px;
+      object-fit: cover;
       border-radius: 10px;
       background: #ccc;
-    }
-
-    .card img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;          /* KEY Estrada behavior */
       transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
-    .card:hover img {
-      transform: scale(1.08);
-      box-shadow: 0 16px 32px rgba(0,0,0,0.25);
+    .carousel-track img:hover {
+      transform: scale(1.06);
+      box-shadow: 0 12px 25px rgba(0,0,0,0.25);
+    }
+
+    .nav {
+      background: none;
+      border: none;
+      font-size: 2rem;
+      cursor: pointer;
+      color: #011F5B;
+      padding: 0 12px;
+      user-select: none;
     }
 
     footer {
       margin-top: 96px;
       text-align: center;
-      font-size: 0.9rem;
+      font-size: 0.85rem;
       color: #666;
     }
   </style>
@@ -69,43 +78,104 @@
 
 <h1>Program Images</h1>
 
-<!-- ================== Pride Day ================== -->
-<h2>Pride Day (April 7)</h2>
-<div class="gallery">
-  <a class="card" href="https://www.flickr.com/">
-    <img src="https://live.staticflickr.com/65535/55195784974_cac063796c_w.jpg" alt="">
-  </a>
-  <a class="card" href="https://www.flickr.com/">
-    <img src="https://live.staticflickr.com/65535/55195683198_abc0707c04_w.jpg" alt="">
-  </a>
-  <a class="card" href="https://www.flickr.com/">
-    <img src="https://live.staticflickr.com/65535/55195683343_18a1e6a8ce_w.jpg" alt="">
-  </a>
-  <a class="card" href="https://www.flickr.com/">
-    <img src="https://live.staticflickr.com/65535/55195785094_d6ec0e6059_w.jpg" alt="">
-  </a>
+<h2 class="section-title">Pride Day (April 7)</h2>
+<div class="carousel" data-gallery="pride-day">
+  <button class="nav prev">‹</button>
+  <div class="carousel-track"></div>
+  <button class="nav next">›</button>
 </div>
 
-<!-- ================== Night at the Rec ================== -->
-<h2>Night at the Rec (2025)</h2>
-<div class="gallery">
-  <a class="card" href="https://www.flickr.com/">
-    <img src="https://live.staticflickr.com/65535/55176537071_5693ec8f0e.jpg" alt="">
-  </a>
-  <a class="card" href="https://www.flickr.com/">
-    <img src="https://live.staticflickr.com/65535/55175647627_a7f3f33d84.jpg" alt="">
-  </a>
-  <a class="card" href="https://www.flickr.com/">
-    <img src="https://live.staticflickr.com/65535/55176792699_513926d9b4.jpg" alt="">
-  </a>
-  <a class="card" href="https://www.flickr.com/">
-    <img src="https://live.staticflickr.com/65535/55176817719_23d605e7b9.jpg" alt="">
-  </a>
+<h2 class="section-title">Night at the Rec (2025)</h2>
+<div class="carousel" data-gallery="night-rec">
+  <button class="nav prev">‹</button>
+  <div class="carousel-track"></div>
+  <button class="nav next">›</button>
+</div>
+
+<h2 class="section-title">Fitness &amp; Wellbeing</h2>
+<div class="carousel" data-gallery="fitness">
+  <button class="nav prev">‹</button>
+  <div class="carousel-track"></div>
+  <button class="nav next">›</button>
+</div>
+
+<h2 class="section-title">Intramurals</h2>
+<div class="carousel" data-gallery="intramurals">
+  <button class="nav prev">‹</button>
+  <div class="carousel-track"></div>
+  <button class="nav next">›</button>
+</div>
+
+<h2 class="section-title">Outdoor Adventure &amp; Climbing</h2>
+<div class="carousel" data-gallery="outdoor">
+  <button class="nav prev">‹</button>
+  <div class="carousel-track"></div>
+  <button class="nav next">›</button>
 </div>
 
 <footer>
-  Images are hosted on Flickr’s public CDN. Hover to preview; click to view on Flickr.
+  Images are hosted on Flickr’s public CDN.
 </footer>
+
+<script>
+  /*
+    ✅ THIS IS THE ONLY SECTION THAT CHANGES MONTHLY
+    ✅ Copy links from Program Images Pages.docx
+    ✅ Paste them into the arrays below
+  */
+  const galleries = {
+    "pride-day": [
+  "https://live.staticflickr.com/65535/55195784974_cac063796c_w.jpg"
+  ""
+  ""
+  ""
+    ],
+    "night-rec": [
+      // paste Night at the Rec links here
+    ],
+    "fitness": [
+      // paste Fitness & Wellbeing links here
+    ],
+    "intramurals": [
+      // paste Intramurals links here
+    ],
+    "outdoor": [
+      // paste Outdoor Adventure links here
+    ]
+  };
+
+  document.querySelectorAll(".carousel").forEach(carousel => {
+    const key = carousel.dataset.gallery;
+    const images = galleries[key] || [];
+    const track = carousel.querySelector(".carousel-track");
+
+    let index = 0;
+    const visible = 4;
+
+    function render() {
+      track.innerHTML = "";
+      images.slice(index, index + visible).forEach(src => {
+        const img = document.createElement("img");
+        img.src = src;
+        img.loading = "lazy";
+        track.appendChild(img);
+      });
+    }
+
+    carousel.querySelector(".prev").onclick = () => {
+      index = Math.max(0, index - 1);
+      render();
+    };
+
+    carousel.querySelector(".next").onclick = () => {
+      index = Math.min(images.length - visible, index + 1);
+      render();
+    };
+
+    render();
+  });
+</script>
 
 </body>
 </html>
+
