@@ -1,8 +1,9 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Carousel Test</title>
+  <title>Bucket Test</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <style>
@@ -12,23 +13,17 @@
       background: #f6f6f6;
     }
 
-    h1 {
-      text-align: center;
-      margin-bottom: 40px;
-    }
-
     h2 {
       color: #011F5B;
       border-bottom: 3px solid #ddd;
       padding-bottom: 8px;
-      margin-top: 40px;
     }
 
     .carousel {
       display: flex;
       align-items: center;
       gap: 12px;
-      margin-top: 16px;
+      margin-top: 20px;
     }
 
     .carousel-track {
@@ -58,9 +53,8 @@
 
 <body>
 
-<h1>Carousel Test</h1>
+<h2>TEST CAROUSEL</h2>
 
-<h2>Pride Day (TEST)</h2>
 <div class="carousel" data-gallery="test">
   <button class="nav prev">‹</button>
   <div class="carousel-track"></div>
@@ -69,11 +63,10 @@
 
 <script>
   const galleries = {
-    "test": [
+    test: [
       "https://live.staticflickr.com/65535/55195784974_cac063796c_w.jpg",
       "https://live.staticflickr.com/65535/55195683198_abc0707c04_w.jpg",
-      "https://live.staticflickr.com/65535/55195683343_18a1e6a8ce_w.jpg",
-      "https://live.staticflickr.com/65535/55195785094_d6ec0e6059_w.jpg"
+      "https://live.staticflickr.com/65535/55195683343_18a1e6a8ce_w.jpg"
     ]
   };
 
@@ -111,4 +104,3 @@
 </body>
 </html>
 ``
-
