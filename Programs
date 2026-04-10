@@ -2,15 +2,15 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Program Images | Penn Recreation</title>
+  <title>Program Images</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <style>
     body {
       font-family: Arial, Helvetica, sans-serif;
-      background-color: #f8f8f8;
       margin: 0;
-      padding: 24px;
+      padding: 32px;
+      background: #f6f6f6;
       color: #222;
     }
 
@@ -19,43 +19,53 @@
       margin-bottom: 48px;
     }
 
-    h2 {
-      margin-top: 56px;
-      padding-bottom: 6px;
-      border-bottom: 2px solid #ccc;
+    .section-title {
+      color: #011F5B; /* Penn Navy */
+      font-weight: 700;
+      margin-top: 72px;
+      margin-bottom: 24px;
+      border-bottom: 3px solid #ddd;
+      padding-bottom: 8px;
     }
 
-    .gallery {
+    /* ===== GRID LAYOUT ===== */
+    .image-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
       gap: 18px;
-      margin-top: 20px;
     }
 
-    .gallery a {
-      display: block;
-      position: relative;
+    .grid-item {
       overflow: hidden;
-      border-radius: 6px;
+      border-radius: 10px;
+      background: #ccc;
+      opacity: 0;
+      transform: translateY(25px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
     }
 
-    .gallery img {
+    .grid-item.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .grid-item img {
       width: 100%;
-      height: auto;
+      height: 160px;
+      object-fit: cover;
       display: block;
-      background-color: #ddd;
       transition: transform 0.25s ease, box-shadow 0.25s ease;
     }
 
-    .gallery a:hover img {
+    .grid-item:hover img {
       transform: scale(1.06);
-      box-shadow: 0 12px 25px rgba(0, 0, 0, 0.25);
+      box-shadow: 0 16px 32px rgba(0,0,0,0.25);
     }
 
     footer {
-      margin-top: 80px;
+      margin-top: 96px;
       text-align: center;
-      font-size: 0.9rem;
+      font-size: 0.85rem;
       color: #666;
     }
   </style>
@@ -65,46 +75,110 @@
 
 <h1>Program Images</h1>
 
-<!-- ========================= -->
-<!-- Pride Day -->
-<!-- ========================= -->
-<h2>Pride Day (April 7)</h2>
-<div class="gallery">
+<h2 class="section-title">Pride Day (April 7)</h2>
+<div class="image-grid" data-gallery="pride-day"></div>
 
-  <a href="https://www.flickr.com/photo.gne?id=55195784974" target="_blank" rel="noopener">
-    <img src="https://live.staticflickr.com/65535/55195784974_cac063796c_w.jpg"
-         alt="Pride Day event at Penn Recreation">
-  </a>
+<h2 class="section-title">Night at the Rec (2025)</h2>
+<div class="image-grid" data-gallery="night-rec"></div>
 
-  <a href="https://www.flickr.com/photo.gne?id=55195683198" target="_blank" rel="noopener">
-    <img src="https://live.staticflickr.com/65535/55195683198_abc0707c04_w.jpg"
-         alt="Pride Day celebration">
-  </a>
+<h2 class="section-title">Fitness &amp; Wellbeing</h2>
+<div class="image-grid" data-gallery="fitness"></div>
 
-</div>
+<h2 class="section-title">Intramurals</h2>
+<div class="image-grid" data-gallery="intramurals"></div>
 
-<!-- ========================= -->
-<!-- Night at the Rec -->
-<!-- ========================= -->
-<h2>Night at the Rec (2025)</h2>
-<div class="gallery">
-
-  <a href="https://www.flickr.com/photo.gne?id=55176537071" target="_blank" rel="noopener">
-    <img src="https://live.staticflickr.com/65535/55176537071_5693ec8f0e.jpg"
-         alt="Night at the Rec event">
-  </a>
-
-  <a href="https://www.flickr.com/photo.gne?id=55175647627" target="_blank" rel="noopener">
-    <img src="https://live.staticflickr.com/65535/55175647627_a7f3f33d84.jpg"
-         alt="Night at the Rec activity">
-  </a>
-
-</div>
+<h2 class="section-title">Outdoor Adventure &amp; Climbing</h2>
+<div class="image-grid" data-gallery="outdoor"></div>
 
 <footer>
-  Images are hosted on Flickr’s public CDN. Hover to preview, click to view on Flickr.
+  Images are hosted on Flickr’s public CDN. Hover to preview; click to view on Flickr.
 </footer>
+
+<script>
+  /*
+    ======================================================
+    ✅ MONTHLY UPDATE AREA — EDIT ONLY BELOW
+    ✅ PASTE ONE IMAGE URL PER LINE
+    ✅ NO QUOTES • NO COMMAS • NO HTML
+    ======================================================
+  */
+
+  const prideDayLinks = `
+https://live.staticflickr.com/65535/55195784974_cac063796c_w.jpg
+https://live.staticflickr.com/65535/55195683198_abc0707c04_w.jpg
+  `;
+
+  const nightRecLinks = `
+  `;
+
+  const fitnessLinks = `
+  `;
+
+  const intramuralsLinks = `
+  `;
+
+  const outdoorLinks = `
+  `;
+
+  /* =====================================================
+     ❌ DO NOT EDIT BELOW THIS LINE
+     ===================================================== */
+
+  const galleries = {
+    "pride-day": prideDayLinks,
+    "night-rec": nightRecLinks,
+    "fitness": fitnessLinks,
+    "intramurals": intramuralsLinks,
+    "outdoor": outdoorLinks
+  };
+
+  // Build grids
+  document.querySelectorAll(".image-grid").forEach(grid => {
+    const key = grid.dataset.gallery;
+    const rawLinks = galleries[key] || "";
+
+    const images = rawLinks
+      .split("\n")
+      .map(l => l.trim())
+      .filter(l => l.startsWith("http"));
+
+    images.forEach(src => {
+      const photoId = src.split("/").pop().split("_")[0];
+      const flickrUrl = `https://www.flickr.com/photo.gne?id=${photoId}`;
+
+      const anchor = document.createElement("a");
+      anchor.href = flickrUrl;
+      anchor.target = "_blank";
+      anchor.rel = "noopener";
+
+      const item = document.createElement("div");
+      item.className = "grid-item";
+
+      const img = document.createElement("img");
+      img.src = src;
+      img.loading = "lazy";
+
+      item.appendChild(img);
+      anchor.appendChild(item);
+      grid.appendChild(anchor);
+    });
+  });
+
+  // Scroll-reveal animation
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("show");
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15 });
+
+  document.querySelectorAll(".grid-item").forEach(item => {
+    observer.observe(item);
+  });
+</script>
 
 </body>
 </html>
-
+``
