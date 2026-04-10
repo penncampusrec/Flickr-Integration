@@ -103,7 +103,8 @@
     ======================================================
   */
 
-  const prideDayLinks = `
+
+const prideDayLinks = `
 https://live.staticflickr.com/65535/55195784974_cac063796c_w.jpg 
 https://live.staticflickr.com/65535/55195683198_abc0707c04_w.jpg 
 https://live.staticflickr.com/65535/55195683343_18a1e6a8ce_w.jpg 
