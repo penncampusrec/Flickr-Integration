@@ -2,136 +2,201 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Program Images | Campus Recreation</title>
+  <title>Program Images</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
+  <!-- ======================== -->
+  <!--        STYLES           -->
+  <!-- ======================== -->
   <style>
     body {
       font-family: Arial, Helvetica, sans-serif;
-      background-color: #f6f6f6;
       margin: 0;
       padding: 32px;
+      background: #f6f6f6;
       color: #222;
     }
 
     h1 {
       text-align: center;
-      margin-bottom: 56px;
+      margin-bottom: 48px;
     }
 
-    h2 {
+    .section-title {
+      color: #011F5B; /* Penn Navy */
+      font-weight: 700;
       margin-top: 64px;
       margin-bottom: 16px;
-      padding-bottom: 8px;
       border-bottom: 3px solid #ddd;
+      padding-bottom: 8px;
     }
 
-    .gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-      gap: 20px;
+    .carousel {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-top: 16px;
     }
 
-    .card {
-      position: relative;
-      width: 100%;
-      height: 170px;
+    .carousel-track {
+      display: flex;
+      gap: 16px;
       overflow: hidden;
+      width: 100%;
+    }
+
+    .carousel-track a {
+      display: block;
+    }
+
+    .carousel-track img {
+      width: 220px;
+      height: 160px;
+      object-fit: cover;
       border-radius: 10px;
       background: #ccc;
-    }
-
-    .card img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
-    .card:hover img {
-      transform: scale(1.08);
-      box-shadow: 0 16px 32px rgba(0,0,0,0.25);
+    .carousel-track a:hover img {
+      transform: scale(1.06);
+      box-shadow: 0 12px 25px rgba(0,0,0,0.25);
+    }
+
+    .nav {
+      background: none;
+      border: none;
+      font-size: 2rem;
+      cursor: pointer;
+      color: #011F5B;
+      padding: 0 12px;
+      user-select: none;
     }
 
     footer {
       margin-top: 96px;
       text-align: center;
-      font-size: 0.9rem;
+      font-size: 0.85rem;
       color: #666;
     }
   </style>
 </head>
+
 <body>
 
 <h1>Program Images</h1>
 
-<!-- ================= PRIDE DAY ================= -->
-<h2>Pride Day (April 7)</h2>
-<div class="gallery">
-  <a class="card" href="https://www.flickr.com/photo.gne?id=55195784974"><img src="https://live.staticflickr.com/65535/55195784974_cac063796c_w.jpg" alt=""></a>
-  <a class="card" href="https://www.flickr.com/photo.gne?id=55195683198"><img src="https://live.staticflickr.com/65535/55195683198_abc0707c04_w.jpg" alt=""></a>
-  <a class="card" href="https://www.flickr.com/photo.gne?id=55195683343"><img src="https://live.staticflickr.com/65535/55195683343_18a1e6a8ce_w.jpg" alt=""></a>
-  <a class="card" href="https://www.flickr.com/photo.gne?id=55195785094"><img src="https://live.staticflickr.com/65535/55195785094_d6ec0e6059_w.jpg" alt=""></a>
-  <a class="card" href="https://www.flickr.com/photo.gne?id=55195527046"><img src="https://live.staticflickr.com/65535/55195527046_6d8d928852_w.jpg" alt=""></a>
-  <a class="card" href="https://www.flickr.com/photo.gne?id=55195938545"><img src="https://live.staticflickr.com/65535/55195938545_94ffe759e3_w.jpg" alt=""></a>
-  <a class="card" href="https://www.flickr.com/photo.gne?id=55194641417"><img src="https://live.staticflickr.com/65535/55194641417_0a07ff7895_w.jpg" alt=""></a>
-  <a class="card" href="https://www.flickr.com/photo.gne?id=55195939295"><img src="https://live.staticflickr.com/65535/55195939295_eacf43e1a3_w.jpg" alt=""></a>
-  <a class="card" href="https://www.flickr.com/photo.gne?id=55194644877"><img src="https://live.staticflickr.com/65535/55194644877_9940935c6c_w.jpg" alt=""></a>
-  <a class="card" href="https://www.flickr.com/photo.gne?id=55194641787"><img src="https://live.staticflickr.com/65535/55194641787_09c1268064_w.jpg" alt=""></a>
-  https://live.staticflickr.com/65535/55195939295_eacf43e1a3_w.jpg
-  https://live.staticflickr.com/65535/55194644877_9940935c6c_w.jpg
-  https://live.staticflickr.com/65535/55195682438_7a1bd94dca_w.jpg 
-https://live.staticflickr.com/65535/55195937570_95de30341e_w.jpg 
-https://live.staticflickr.com/65535/55194641787_09c1268064_w.jpg 
-https://live.staticflickr.com/65535/55195683698_7edfb4ae7c_w.jpg 
-https://live.staticflickr.com/65535/55195683608_eef364b0f6_w.jpg 
-https://live.staticflickr.com/65535/55194641627_d6d2eb6b2d_w.jpg 
-https://live.staticflickr.com/65535/55195940470_7faedb67d3_w.jpg 
-https://live.staticflickr.com/65535/55195680703_699199dceb_w.jpg 
-https://live.staticflickr.com/65535/55195527871_b002122a51_w.jpg 
-https://live.staticflickr.com/65535/55194643857_3930720bf0_w.jpg 
-  
+<!-- ======================== -->
+<!--        SECTIONS          -->
+<!-- ======================== -->
+
+<h2 class="section-title">Pride Day (April 7)</h2>
+<div class="carousel" data-gallery="pride-day">
+  <button class="nav prev">‹</button>
+  <div class="carousel-track"></div>
+  <button class="nav next">›</button>
 </div>
 
-<!-- ================= NIGHT AT THE REC ================= -->
-<h2>Night at the Rec (2025)</h2>
-<div class="gallery">
-  <a class="card" href="https://www.flickr.com/photo.gne?id=55176537071"><img src="https://live.staticflickr.com/65535/55176537071_5693ec8f0e.jpg" alt=""></a>
-  <a class="card" href="https://www.flickr.com/photo.gne?id=55175647627"><img src="https://live.staticflickr.com/65535/55175647627_a7f3f33d84.jpg" alt=""></a>
-  <a class="card" href="https://www.flickr.com/photo.gne?id=55176792699"><img src="https://live.staticflickr.com/65535/55176792699_513926d9b4.jpg" alt=""></a>
-  <a class="card" href="https://www.flickr.com/photo.gne?id=55176817719"><img src="https://live.staticflickr.com/65535/55176817719_23d605e7b9.jpg" alt=""></a>
-  <a class="card" href="https://www.flickr.com/photo.gne?id=55176817514"><img src="https://live.staticflickr.com/65535/55176817514_92ab8511bf.jpg" alt=""></a>
-  <a class="card" href="https://www.flickr.com/photo.gne?id=55176735438"><img src="https://live.staticflickr.com/65535/55176735438_2758d2676b.jpg" alt=""></a>
+<h2 class="section-title">Night at the Rec (2025)</h2>
+<div class="carousel" data-gallery="night-rec">
+  <button class="nav prev">‹</button>
+  <div class="carousel-track"></div>
+  <button class="nav next">›</button>
 </div>
 
-<!-- ================= FITNESS & WELLBEING ================= -->
-<h2>Fitness &amp; Wellbeing</h2>
-<div class="gallery">
-  <a class="card" href="https://www.flickr.com/photo.gne?id=55170349908"><img src="https://live.staticflickr.com/65535/55170349908_76655a72e1.jpg" alt=""></a>
-  <a class="card" href="https://www.flickr.com/photo.gne?id=55170353278"><img src="https://live.staticflickr.com/65535/55170353278_772bbc58b4.jpg" alt=""></a>
-  <a class="card" href="https://www.flickr.com/photo.gne?id=55170187561"><img src="https://live.staticflickr.com/65535/55170187561_ec2c926a5f.jpg" alt=""></a>
-  <a class="card" href="https://www.flickr.com/photo.gne?id=55170436529"><img src="https://live.staticflickr.com/65535/55170436529_18fbe244c9.jpg" alt=""></a>
+<h2 class="section-title">Fitness &amp; Wellbeing</h2>
+<div class="carousel" data-gallery="fitness">
+  <button class="nav prev">‹</button>
+  <div class="carousel-track"></div>
+  <button class="nav next">›</button>
 </div>
 
-<!-- ================= INTRAMURALS ================= -->
-<h2>Intramurals</h2>
-<div class="gallery">
-  <a class="card" href="https://www.flickr.com/photo.gne?id=55185599733"><img src="https://live.staticflickr.com/65535/55185599733_97ff080aa9_w.jpg" alt=""></a>
-  <a class="card" href="https://www.flickr.com/photo.gne?id=55185700264"><img src="https://live.staticflickr.com/65535/55185700264_722efe0bde_w.jpg" alt=""></a>
-  <a class="card" href="https://www.flickr.com/photo.gne?id=55184553957"><img src="https://live.staticflickr.com/65535/55184553957_66e8d18d20.jpg" alt=""></a>
+<h2 class="section-title">Intramurals</h2>
+<div class="carousel" data-gallery="intramurals">
+  <button class="nav prev">‹</button>
+  <div class="carousel-track"></div>
+  <button class="nav next">›</button>
 </div>
 
-<!-- ================= OUTDOOR ADVENTURE ================= -->
-<h2>Outdoor Adventure &amp; Climbing</h2>
-<div class="gallery">
-  <a class="card" href="https://www.flickr.com/photo.gne?id=55170554810"><img src="https://live.staticflickr.com/65535/55170554810_63ab291bec.jpg" alt=""></a>
-  <a class="card" href="https://www.flickr.com/photo.gne?id=55170328098"><img src="https://live.staticflickr.com/65535/55170328098_c202f9b500.jpg" alt=""></a>
-  <a class="card" href="https://www.flickr.com/photo.gne?id=55169264047"><img src="https://live.staticflickr.com/65535/55169264047_f4045239f6.jpg" alt=""></a>
+<h2 class="section-title">Outdoor Adventure &amp; Climbing</h2>
+<div class="carousel" data-gallery="outdoor">
+  <button class="nav prev">‹</button>
+  <div class="carousel-track"></div>
+  <button class="nav next">›</button>
 </div>
 
 <footer>
   Images are hosted on Flickr’s public CDN. Hover to preview; click to view on Flickr.
 </footer>
+
+<!-- ======================== -->
+<!--      JAVASCRIPT          -->
+<!-- ======================== -->
+<script>
+  /*
+    ✅ THIS IS THE ONLY SECTION YOU EDIT MONTHLY
+    ✅ Paste ONE image URL per line
+    ✅ Do NOT add <img> or <a> tags
+  */
+  const galleries = {
+    "pride-day": [
+      // PRIDE DAY LINKS GO HERE
+    ],
+    "night-rec": [
+      // NIGHT AT THE REC LINKS GO HERE
+    ],
+    "fitness": [
+      // FITNESS & WELLBEING LINKS GO HERE
+    ],
+    "intramurals": [
+      // INTRAMURALS LINKS GO HERE
+    ],
+    "outdoor": [
+      // OUTDOOR ADVENTURE & CLIMBING LINKS GO HERE
+    ]
+  };
+
+  document.querySelectorAll(".carousel").forEach(carousel => {
+    const key = carousel.dataset.gallery;
+    const images = galleries[key] || [];
+    const track = carousel.querySelector(".carousel-track");
+
+    let index = 0;
+    const visible = 5;
+
+    function render() {
+      track.innerHTML = "";
+      images.slice(index, index + visible).forEach(src => {
+        const photoId = src.split("/").pop().split("_")[0];
+        const flickrUrl = `https://www.flickr.com/photo.gne?id=${photoId}`;
+
+        const link = document.createElement("a");
+        link.href = flickrUrl;
+        link.target = "_blank";
+        link.rel = "noopener";
+
+        const img = document.createElement("img");
+        img.src = src;
+        img.loading = "lazy";
+
+        link.appendChild(img);
+        track.appendChild(link);
+      });
+    }
+
+    carousel.querySelector(".prev").onclick = () => {
+      index = Math.max(0, index - 1);
+      render();
+    };
+
+    carousel.querySelector(".next").onclick = () => {
+      index = Math.min(images.length - visible, index + 1);
+      render();
+    };
+
+    render();
+  });
+</script>
 
 </body>
 </html>
